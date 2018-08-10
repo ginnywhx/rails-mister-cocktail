@@ -1,12 +1,15 @@
-<p>
-  <strong>Details:</strong>
-  <%= @cocktail.name %>
+
+  <h1><strong>Details:</strong></h1>
+<div class = "container">
+  <p>
+    <strong><%= @cocktail.name %></strong>
+  </p>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
   <% @cocktail.doses.each do |dose| %>
    <%= dose.description %>
    <%= dose.ingredient.name %>
    <%= link_to "Delete", dose_path(dose), method: :delete %>
    <% end %>
-
 </p>
 
 <%= link_to 'Share', "https://www.facebook.com/" %> |
